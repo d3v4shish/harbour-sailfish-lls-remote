@@ -1,0 +1,11 @@
+#!/bin/sh
+set -eu
+BASE=/usr/share/harbour-sailfish-lls-remote
+: "${LLS_REMOTE_CONFIG:=$HOME/.config/harbour-sailfish-lls-remote/config.json}"
+: "${LLS_REMOTE_LOG:=$HOME/.local/state/harbour-sailfish-lls-remote/remote-control.log}"
+export LLS_REMOTE_CONFIG LLS_REMOTE_LOG
+exec /usr/bin/python3 "$BASE/remote_control.py" \
+    --host "${LLS_REMOTE_HOST:-0.0.0.0}" \
+    --port "${LLS_REMOTE_PORT:-8091}" \
+    --adapter-module mpris_adapter \
+    "$@"

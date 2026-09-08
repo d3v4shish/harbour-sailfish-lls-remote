@@ -1,0 +1,13 @@
+[Unit]
+Description=LLs vPlayer LAN remote control sidecar
+After=default.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/harbour-sailfish-lls-remote
+Restart=on-failure
+Environment=LLS_REMOTE_CONFIG=%h/.config/harbour-sailfish-lls-remote/config.json
+Environment=LLS_REMOTE_LOG=%h/.local/state/harbour-sailfish-lls-remote/remote-control.log
+
+[Install]
+WantedBy=default.target

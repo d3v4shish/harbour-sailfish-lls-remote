@@ -1,0 +1,11 @@
+# Sailfish SDK and RPM build output
+.sfdk/
+.rpmbuild/
+RPMS/
+*.rpm
+*.tar.bz2
+documentation.list
+
+# Python runtime output
+__pycache__/
+*.py[cod]
